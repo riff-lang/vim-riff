@@ -25,8 +25,12 @@ syn match   riffConstant    "null\>"
 " Special characters
 syn match   riffSpecialChar display contained #\\[\\abefnrtv'"]\|\\x[[:xdigit:]]\{2}\|\\[[:digit:]]\{,3}#
 
+" Format modifiers and specifiers in strings
+syn match   riffFormat      display contained "%[- 0]*\d*\.\=\d*[aAcdeEfgiosxX]"
+syn match   riffFormat      display contained "%%"
+
 " Strings
-syn region  riffString      start=+"+ end=+"+ contains=riffSpecialChar
+syn region  riffString      start=+"+ end=+"+ contains=riffFormat,riffSpecialChar
 
 " Character literals
 syn match   riffCharacter   "'[^\\]'"
@@ -57,7 +61,7 @@ syn match   riffSpecial     "\.\."
 " Library functions
 syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|sin\>\|sqrt\>\|tan\>"
 syn match   riffFunction    "rand\>\|srand\>"
-syn match   riffFunction    "byte\>\|char\>\|hex\>\|lower\>\|split\>\|upper/>"
+syn match   riffFunction    "byte\>\|char\>\|fmt\>\|hex\>\|lower\>\|num\>\|split\>\|upper/>"
 
 " Keywords
 syn match   riffStatement   "break\>\|continue\>\|exit\>\|fn\>\|local\>\|print\>\|return\>"
@@ -67,6 +71,7 @@ syn match   riffOperator    "in\>"
 
 hi def link riffComment     Comment
 hi def link riffConstant    Constant
+hi def link riffFormat      SpecialChar
 hi def link riffString      String
 hi def link riffCharacter   Character
 hi def link riffNumber      Number
