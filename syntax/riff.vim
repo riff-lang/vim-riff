@@ -23,7 +23,7 @@ syn region  riffComment     start="/\*" end="\*/" contains=riffTodo
 syn match   riffConstant    "null\>"
 
 " Special characters
-syn match   riffSpecialChar display contained #\\[\\abefnrtv'"]\|\\x[[:xdigit:]]\{2}\|\\[[:digit:]]\{,3}#
+syn match   riffSpecialChar display contained #\\[\\abefnrtv'"]\|\\x\x\{2}\|\\\d\{,3}#
 
 " Format modifiers and specifiers in strings
 syn match   riffFormat      display contained "%[-+ 0]*\(\*\|\d*\)\=\(\.\(\d*\|\*\)\=\)\=[aAcdeEfgiosxX]"
@@ -37,20 +37,18 @@ syn match   riffCharacter   "'[^\\]'"
 syn match   riffCharacter   "'[^']*'" contains=riffSpecialChar
 
 " Numbers
-syn match   riffNumber      "\<\d\+"
-syn match   riffNumber      "\<0[xX]\x*"
-syn match   riffNumber      "\<0[bB][01]*"
+syn match   riffNumber      "\<\d[[:digit:]_]*"
+syn match   riffNumber      "\<0[xX][[:xdigit:]_]*"
+syn match   riffNumber      "\<0[bB][01_]*"
 
 " Floats
-syn match   riffFloat       "\<\d\+\.\d\+"
-syn match   riffFloat       "\.\d\+"
-syn match   riffFloat       "\<0[xX]\x\+\.\x\+"
-syn match   riffFloat       "\<0[xX].\x\+"
+syn match   riffFloat       "\<\(\d[[:digit:]_]*\)\=\.\d[[:digit:]_]*\([eE][+-]\=\d[[:digit:]_]*\)\="
+syn match   riffFloat       "\<0[xX][[:xdigit:]_]*\.\x[[:xdigit:]_]*\([pP][+-]\=\x[[:xdigit:]_]*\)\="
 
 " Identifiers
 " Hack to allow reserved keywords and functions to override this rule,
 " which allows greater control than just using keyword.
-syn match   riffIdentifier  "[a-zA-Z]\+\w*\>"
+syn match   riffIdentifier  "\a\w*\>"
 
 " Hack to prevent something like `.5` in `1..5` from being highlighted
 " as a float. Using Special instead of Operator avoids having to
