@@ -26,7 +26,7 @@ syn match   riffConstant    "null\>"
 syn match   riffSpecialChar display contained #\\[\\abefnrtv'"]\|\\x\x\{2}\|\\\d\{,3}#
 
 " Format modifiers and specifiers in strings
-syn match   riffFormat      display contained "%[-+ 0]*\(\*\|\d*\)\=\(\.\(\d*\|\*\)\=\)\=[aAcdeEfgiosxX]"
+syn match   riffFormat      display contained "%[-+ 0]*\(\*\|\d*\)\=\(\.\(\d*\|\*\)\=\)\=[aAcdeEfFgGiosxX]"
 syn match   riffFormat      display contained "%%"
 
 " Strings
