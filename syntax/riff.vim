@@ -59,7 +59,7 @@ syn match   riffSpecial     "\.\."
 " Library functions
 syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|sin\>\|sqrt\>\|tan\>"
 syn match   riffFunction    "rand\>\|srand\>"
-syn match   riffFunction    "byte\>\|char\>\|fmt\>\|hex\>\|lower\>\|num\>\|split\>\|upper/>"
+syn match   riffFunction    "byte\>\|char\>\|fmt\>\|hex\>\|lower\>\|num\>\|split\>\|upper\>"
 
 " Keywords
 syn match   riffStatement   "break\>\|continue\>\|exit\>\|fn\>\|local\>\|print\>\|return\>"
