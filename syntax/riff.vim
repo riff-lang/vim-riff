@@ -23,7 +23,7 @@ syn region  riffComment     start="/\*" end="\*/" contains=riffTodo
 syn match   riffConstant    "null\>"
 
 " Special characters
-syn match   riffSpecialChar display contained #\\[\\abefnrtv'"]\|\\x\x\{2}\|\\\d\{,3}#
+syn match   riffSpecialChar display contained #\\[\\abefnrtv'"]\|\\x\x\{,2}\|\\\d\{,3}\|\\u\x\{,4}\|\\U\x\{,8}#
 
 " Format modifiers and specifiers in strings
 syn match   riffFormat      display contained "%[-+ 0]*\(\*\|\d*\)\=\(\.\(\d*\|\*\)\=\)\=[aAcdeEfFgGiosxX]"
