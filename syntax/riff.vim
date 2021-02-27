@@ -66,7 +66,7 @@ syn match   riffFunction    "byte\>\|char\>\|fmt\>\|hex\>\|lower\>\|num\>\|split
 " Keywords
 syn match   riffStatement   "break\>\|continue\>\|exit\>\|fn\>\|local\>\|print\>\|return\>"
 syn match   riffConditional "elif\>\|else\>\|if\>"
-syn match   riffRepeat      "do\>\|for\>\|while\>"
+syn match   riffRepeat      "do\>\|for\>\|loop\>\|while\>"
 syn match   riffOperator    "in\>"
 
 hi def link riffComment     Comment
