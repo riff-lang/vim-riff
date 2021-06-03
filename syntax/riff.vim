@@ -37,15 +37,17 @@ syn region  riffString      start=+"+ end=+"+ contains=riffFormat,riffSpecialCha
 syn match   riffCharacter   "'[^\\]'"
 syn match   riffCharacter   "'[^']*'" contains=riffSpecialChar
 
-" Numbers
+" Decimal, hex integers
 syn match   riffNumber      "\<\d[[:digit:]_]*"
 syn match   riffNumber      "\<0[xX][[:xdigit:]_]*"
-syn match   riffNumber      "\<0[bB][01_]*"
 
 " Floats
-syn match   riffFloat       "\.\d[[:digit:]_]*\([eE][+-]\=\d[[:digit:]_]*\)\="
+syn match   riffFloat       "\.\=\d[[:digit:]_]*\([eE][+-]\=\d[[:digit:]_]*\)\="
 syn match   riffFloat       "\<\(\d[[:digit:]_]*\)\=\.\d[[:digit:]_]*\([eE][+-]\=\d[[:digit:]_]*\)\="
-syn match   riffFloat       "\<0[xX][[:xdigit:]_]*\.\x[[:xdigit:]_]*\([pP][+-]\=\x[[:xdigit:]_]*\)\="
+syn match   riffFloat       "\<0[xX][[:xdigit:]_]*\.\=\x[[:xdigit:]_]*\([pP][+-]\=\d[[:digit:]_]*\)\="
+
+" Binary integers
+syn match   riffNumber      "\<0[bB][01_]*"
 
 " Identifiers
 " Hack to allow reserved keywords and functions to override this rule,
