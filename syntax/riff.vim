@@ -61,7 +61,7 @@ syn match   riffIdentifier  "\a\w*\>"
 syn match   riffSpecial     "\.\."
 
 " Library functions
-syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|pow\>\|sin\>\|sqrt\>\|tan\>"
+syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|sin\>\|sqrt\>\|tan\>"
 syn match   riffFunction    "rand\>\|srand\>"
 syn match   riffFunction    "byte\>\|char\>\|fmt\>\|gsub\>\|hex\>\|lower\>\|num\>\|split\>\|sub\>\|upper\>"
 
