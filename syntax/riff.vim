@@ -27,7 +27,7 @@ syn match   riffSpecialChar display contained "\\[\\abefnrtv'"]\|\\x\x\{,2}\|\\\
 syn match   riffSpecialChar display contained "\\u\x\{,4}\|\\U\x\{,8}"
 
 " Format modifiers and specifiers in strings
-syn match   riffFormat      display contained "%[-+ 0]*\(\*\|\d*\)\=\(\.\(\d*\|\*\)\=\)\=[aAcdeEfFgGiosxX]"
+syn match   riffFormat      display contained "%[-+ 0]*\(\*\|\d*\)\=\(\.\(\d*\|\*\)\=\)\=[aAbcdeEfFgGiosxX]"
 syn match   riffFormat      display contained "%%"
 
 " Strings
@@ -61,9 +61,9 @@ syn match   riffIdentifier  "\a\w*\>"
 syn match   riffSpecial     "\.\."
 
 " Library functions
-syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|sin\>\|sqrt\>\|tan\>"
+syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|pow\>\|sin\>\|sqrt\>\|tan\>"
 syn match   riffFunction    "rand\>\|srand\>"
-syn match   riffFunction    "byte\>\|char\>\|fmt\>\|hex\>\|lower\>\|num\>\|split\>\|upper\>"
+syn match   riffFunction    "byte\>\|char\>\|fmt\>\|gsub\>\|hex\>\|lower\>\|num\>\|split\>\|sub\>\|upper\>"
 
 " Keywords
 syn match   riffStatement   "break\>\|continue\>\|exit\>\|fn\>\|local\>\|print\>\|return\>"
