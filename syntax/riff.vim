@@ -19,6 +19,9 @@ syn keyword riffTodo        contained TODO
 syn match   riffComment     "//.*$" contains=riffTodo
 syn region  riffComment     start="/\*" end="\*/" contains=riffTodo
 
+" Shebang (first line)
+syn match   riffComment     "\%^#!.*$"
+
 " null
 syn match   riffConstant    "null\>"
 
