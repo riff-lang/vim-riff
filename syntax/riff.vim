@@ -22,11 +22,8 @@ syn region  riffComment     start="/\*" end="\*/" contains=riffTodo
 " Shebang (first line)
 syn match   riffComment     "\%^#!.*$"
 
-" null
-syn match   riffConstant    "null\>"
-
 " Special characters
-syn match   riffSpecialChar display contained "\\[\\abefnrtv'"]\|\\x\x\{,2}\|\\\d\{,3}"
+syn match   riffSpecialChar display contained "\\[\\abefmnrtv'"]\|\\x\x\{,2}\|\\\d\{,3}"
 syn match   riffSpecialChar display contained "\\u\x\{,4}\|\\U\x\{,8}"
 
 " Format modifiers and specifiers in strings
@@ -57,6 +54,13 @@ syn match   riffNumber      "\<0[bB][01_]*"
 " which allows greater control than just using keyword.
 syn match   riffIdentifier  "\a\w*\>"
 
+" null
+syn match   riffConstant    "null\>"
+
+" Predefined variables
+syn match   riffConstant    "stdin\>\|stdout\>\|stderr\>"
+syn match   riffConstant    "arg\>"
+
 " Hack to prevent something like `.5` in `1..5` from being highlighted
 " as a float. Using Special instead of Operator avoids having to
 " define every single operator, which is what every other syntax file
@@ -65,11 +69,13 @@ syn match   riffSpecial     "\.\."
 
 " Library functions
 syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|sin\>\|sqrt\>\|tan\>"
+syn match   riffFunction    "close\>\|eof\>\|eval\>\|flush\>\|get\>\|getc\>\|open\>\|print\>\|printf\>\|putc\>\|read\>\|write\>"
 syn match   riffFunction    "rand\>\|srand\>"
-syn match   riffFunction    "byte\>\|char\>\|fmt\>\|gsub\>\|hex\>\|lower\>\|num\>\|split\>\|sub\>\|upper\>"
+syn match   riffFunction    "byte\>\|char\>\|fmt\>\|gsub\>\|hex\>\|lower\>\|num\>\|split\>\|sub\>\|type\>\|upper\>"
+syn match   riffFunction    "exit\>"
 
 " Keywords
-syn match   riffStatement   "break\>\|continue\>\|exit\>\|fn\>\|local\>\|print\>\|return\>"
+syn match   riffStatement   "break\>\|continue\>\|fn\>\|local\>\|return\>"
 syn match   riffConditional "elif\>\|else\>\|if\>"
 syn match   riffRepeat      "do\>\|for\>\|loop\>\|while\>"
 syn match   riffOperator    "in\>"
