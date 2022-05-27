@@ -72,7 +72,7 @@ syn match   riffFunction    "abs\>\|atan\>\|ceil\>\|cos\>\|exp\>\|int\>\|log\>\|
 syn match   riffFunction    "close\>\|eof\>\|eval\>\|flush\>\|get\>\|getc\>\|open\>\|print\>\|printf\>\|putc\>\|read\>\|write\>"
 syn match   riffFunction    "rand\>\|srand\>"
 syn match   riffFunction    "byte\>\|char\>\|fmt\>\|gsub\>\|hex\>\|lower\>\|num\>\|split\>\|sub\>\|type\>\|upper\>"
-syn match   riffFunction    "exit\>"
+syn match   riffFunction    "clock\>\|exit\>"
 
 " Keywords
 syn match   riffStatement   "break\>\|continue\>\|fn\>\|local\>\|return\>"
